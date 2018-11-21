@@ -5,3 +5,23 @@
 
 	// we added margin-top -20vh so that the grey background of the section would fill in the bottom right triangle of white from the header. It's the difference (because we stated 75vh in our header)
 }
+
+.section-features {
+	padding: 20rem 0;
+	background-image: linear-gradient(to right bottom,
+		rgba($color-primarylight, 0.6),
+		rgba($color-primarydark, 0.6)),
+	url(../img/nat-4.jpg);
+	background-size: cover;
+
+	transform: skewY(-7deg);
+
+	margin-top: -10rem;
+
+	& > * {
+		transform: skewY(7deg);
+	}
+
+	//this code selects ALL the children of the section-features in order to re-skew them back to normal
+
+}
