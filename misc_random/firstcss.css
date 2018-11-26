@@ -1,0 +1,253 @@
+/*
+COLORS:
+
+Light green: rgba(129, 214, 114, 1.)
+Medium green: #55c57a
+Dark green: rgba(40, 181, 134, 1.)
+
+*/
+
+/*first thing is to do a basic reset, in order to make every browser to react the same way from the start*/
+
+$color-primary: #55c57a;
+$color-primarylight: #7ed56f;
+$color-primarydark: #28b485;
+
+
+*,
+ *::after,
+ *::before {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: inherit;
+	
+	/*changes box model so that borders and padding are no longer added
+	
+	It's better CSS practice to set the default settings to box-sizing: inherit; because it forces inheritance. Box-sizing by itself is not inherited - but by setting it on the universal reset as inherit - it will automatically inherit whatever we put on "body" with border-box
+
+	*/
+}
+
+html {
+	font-size: 62.5%;
+
+	/*1 REM equal 10 px, so changing all the pixels to REM means you divide the pixels by 10 and that gives you your REM size. makes for easier math
+
+	setting this to pixels is bad practice because it overrides if people need to increase their default brower font size.  So what we do instead is set it to a percentage. Translates into a percentage of the font size given by the browser
+
+	REM's are not supported in anything less than IE9*/
+}
+
+body {
+	font-family: "Lato", sans-serif;
+	font-weight: 400;
+	/*font-size: 16px;*/
+	line-height: 1.7;
+	color: #777;
+	padding: 3rem;
+	box-sizing: border-box;
+	/*1.7 times bigger than the predefined height*/
+}
+
+.header {
+	height: 95vh;
+	background-image: linear-gradient(to right bottom,
+		rgba(119, 221, 102, 0.6),
+		rgba(34, 187, 136, 0.6)),
+		url(../img/hero.jpg);
+	background-size: cover;
+	background-position: top;
+	position: relative;
+
+	clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+	/* whatever the viewport size the image now stays at the top, the bottom will get cropped as you scale smaller ( you can also choose bottom or center.  If center it will always be centered as it scales.) */
+	
+	/*at every point it should be 95% of the view port height */
+	/*whatever the width of the viewport or element, it'll try and fit the element in the box*/
+	/* you do ".." in order to go out and up a folder*/
+
+	/* clip-path: polygon  "x" is the lef to right, "y" is the north and south*/
+}
+
+.header__logo-box {
+	position: absolute;
+	top: 4rem;
+	left: 4rem;
+}
+
+.header__logo {
+	height: 3.5rem;
+}
+
+.header__text-box {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+.heading-primary {
+	color: #fff;
+	text-transform: uppercase;
+
+	backface-visibility: hidden;
+	margin-bottom: 6rem;
+	/*this is because sometimes animations have shakes, no one knows why but this is the fix*/
+}
+
+.heading-primary--main {
+	display: block;
+	font-size: 6rem;
+	font-weight: 400;
+	letter-spacing: 3.5rem;
+
+	animation-name: moveInleft;
+	animation-duration: 1s;
+	animation-timing-function: ease-in-out;
+
+	/*
+	animation-delay: 2s;
+	animation-iteration-count: 3;
+
+	*/
+}
+
+.heading-primary--sub {
+	display: block;
+	font-size: 2rem;
+	font-weight: 700;
+	letter-spacing: 1.75rem;
+
+	animation: moveInRight 1s ease-in-out;
+	/*can put all the animation stuff in 1 line*/
+}
+
+@keyframes moveInleft {
+	0% {
+		opacity: 0;
+		transform: translateX(-10rem);
+	}
+
+	80% {
+		transform: translateX(1rem);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translate(0);
+	}
+}
+
+@keyframes moveInRight {
+	0% {
+		opacity: 0;
+		transform: translateX(1rem);
+	}
+
+	80% {
+		transform: translateX(-1rem);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translate(0);
+	}
+}
+
+@keyframes moveInBottom {
+	0% {
+		opacity: 0;
+		transform: translateY(3rem);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translate(0);
+	}
+
+}
+
+.btn:link,
+.btn:visited {
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 1.5rem 4rem;
+	display: inline-block;
+	border-radius: 10rem;
+	transition: all .2s;
+	position: relative;
+	font-size: 1.6rem;
+}
+
+.btn:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
+
+	/*
+	for box shadow it is xaxis, yaxis, blur, color.
+	you set a bigger yaxis and higher blur because you want the button to look further away from the page.
+	*/
+}
+
+.btn:active {
+	transform: translateY(1px);
+	box-shadow: 0 .5rem .8rem rgba(0, 0, 0, .2);
+
+	/*
+	you set a lower yaxis and smaller blur on the active state meaning that when you "click" the button it returns closer to the page so blur is less
+	*/
+}
+
+.btn--white {
+	background-color: #fff;
+	color: #777;
+}
+
+.btn::after {
+	content: "";
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	border-radius: 10rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	transition: all .4s;
+
+
+
+/*
+	in order to have the "after" pseudo element to appear on the page you have to specify it's "content" and property. this is always necessary, doesn't matter what the content is, it could always be empty (like it is here), or it's not going to appear.
+
+	height and width are at 100% but it's 100% of the BTN, b/c it's like a child of the button.
+
+	absolute positioning--> needs to have a reference (the first reference with relative positioning it can find), but we want this to be hidding after the button, so we need to add "position: aboslute;" to btn:visited
+
+	zindex defines the position of the elements if they are one on top of the other
+
+*/
+}
+
+.btn--white::after {
+	background-color: #fff;
+}
+
+.btn:hover::after {
+	transform: scaleX(1.5) scaleY(1.6);
+	opacity: 0;
+	/*
+	transform:scale --> increases the element
+	we also want to animate it - but you have to put that transform on the initial state (so the ::after property)
+	*/
+}
+
+.btn--animated {
+	animation: moveInBottom 0.5s ease-out .75s;
+	animation-fill-mode: backwards;
+
+	/*
+	animation-fill-mode: backwards --> automatically applies the styles of 0% before the animation starts
+		*/
+}
