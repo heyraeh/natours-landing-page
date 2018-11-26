@@ -91,7 +91,6 @@ body {
     margin-bottom: 3rem; }
 
 .u-center-text {
-<<<<<<< HEAD
   text-align: center !important; }
 
 .u-margin-bottom-small {
@@ -110,20 +109,6 @@ body {
   margin-top: 10rem !important; }
 
 .btn, .btn:link, .btn:visited {
-=======
-  text-align: center; }
-
-.u-margin-bottom-small {
-  margin-bottom: 1.5rem; }
-
-.u-margin-bottom-medium {
-  margin-bottom: 8rem; }
-
-.u-margin-bottom-big {
-  margin-bottom: 8rem; }
-
-.btn:link, .btn:visited {
->>>>>>> 8b8dc6ad461c5bf7f758065ec39d073f21d1499d
   text-transform: uppercase;
   text-decoration: none;
   padding: 1.5rem 4rem;
@@ -212,11 +197,7 @@ body {
     overflow: hidden;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
     .card__side--front {
-<<<<<<< HEAD
       background-color: #fff; }
-=======
-      background-color: #rgba #fff; }
->>>>>>> 8b8dc6ad461c5bf7f758065ec39d073f21d1499d
     .card__side--back {
       transform: rotateY(180deg); }
       .card__side--back-1 {
@@ -234,13 +215,9 @@ body {
     height: 23rem;
     background-blend-mode: screen;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-<<<<<<< HEAD
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     border-top-left-radius: 3px;
     border-top-right-radius: 3px; }
-=======
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
->>>>>>> 8b8dc6ad461c5bf7f758065ec39d073f21d1499d
     .card__picture--1 {
       background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/nat-5.jpg); }
     .card__picture--2 {
@@ -324,7 +301,6 @@ body {
   .composition:hover .composition__photo:not(:hover) {
     transform: scale(0.95); }
 
-<<<<<<< HEAD
 .form__group:not(:last-child) {
   margin-bottom: 2rem; }
 
@@ -403,8 +379,6 @@ body {
 .form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
   opacity: 1; }
 
-=======
->>>>>>> 8b8dc6ad461c5bf7f758065ec39d073f21d1499d
 .feature-box {
   background-color: rgba(255, 255, 255, 0.8);
   font-size: 1.5rem;
@@ -422,7 +396,6 @@ body {
   .feature-box:hover {
     transform: translateY(-1.5rem) scale(1.03); }
 
-<<<<<<< HEAD
 .story {
   width: 75%;
   margin: 0 auto;
@@ -521,8 +494,6 @@ body {
     width: 80%;
     float: right; }
 
-=======
->>>>>>> 8b8dc6ad461c5bf7f758065ec39d073f21d1499d
 .row {
   max-width: 114rem;
   margin: 0 auto; }
@@ -570,7 +541,6 @@ body {
     transform: translate(-50%, -50%);
     text-align: center; }
 
-<<<<<<< HEAD
 .navigation__checkbox {
   display: none; }
 
@@ -645,8 +615,6 @@ body {
   opacity: 1;
   width: 100%; }
 
-=======
->>>>>>> 8b8dc6ad461c5bf7f758065ec39d073f21d1499d
 .section-about {
   background-color: #f7f7f7;
   padding: 25rem 0;
@@ -663,7 +631,6 @@ body {
 
 .section-tours {
   background-color: #f7f7f7;
-<<<<<<< HEAD
   padding: 25rem 0 15rem 0;
   margin-top: -10rem; }
 
@@ -684,7 +651,3 @@ body {
   .book__form {
     width: 50%;
     padding: 6rem; }
-=======
-  padding: 25rem 0 50rem 0;
-  margin-top: -10rem; }
->>>>>>> 8b8dc6ad461c5bf7f758065ec39d073f21d1499d
