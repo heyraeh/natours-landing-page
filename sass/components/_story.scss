@@ -9,6 +9,16 @@
 	font-size: $default-font-size;
 	transform: skewX(-12deg);
 
+	@include respond(tab-port) {
+		width: 100%;
+		padding: 4rem;
+		padding-left: 7rem;
+	}
+
+	@include respond(phone) {
+		transform: skewX(0);
+	}
+
 	&__shape {
 		width: 15rem;
 		height: 15rem;
@@ -19,6 +29,10 @@
 		clip-path: circle(50% at 50% 50%);
 		transform: translateX(-3rem) skewX(12deg);
 		position: relative;
+
+		@include respond(phone) {
+			transform: translateX(-3rem) skewX(0);
+		}
 	}
 
 	// for Shape-outside.  the first number is radius.  So in this situation you want to say I want the radius to be half.  So half of 15rem is 7.5.  then you state you want it at 50% 50%.  This will only work if 1) you have the thing floated. and 2) if you have defined dimensions.
@@ -35,6 +49,10 @@
 
 	&__text {
 		transform: skewX(12deg);
+
+		@include respond(phone) {
+			transform: skewX(0);
+		}
 	}
 
 	&__caption {
